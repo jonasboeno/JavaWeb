@@ -16,6 +16,32 @@ import javax.servlet.http.HttpServletResponse;
 public class ProdutoServlet extends HttpServlet {
 
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
+        
+        String nome = req.getParameter("nome");
+        String cnpj = req.getParameter("cnpj");
+        String endereco = req.getParameter("endereco");
+        String produto = req.getParameter("produto");
+        String quantidade = req.getParameter("quantidade");
+        String valor = req.getParameter("valor");
+        
+       double vlr = Double.parseDouble(valor);
+       double qtd = Integer.parseInt(quantidade);
+       String total = Double.toString(qtd * vlr);
+       
+       PrintWriter saida = resp.getWriter();
+       saida.println("<b>Nome: </b>"+ nome + "<br>");
+       saida.println("<b>CNPJ: </b>"+ cnpj + "<br>");
+       saida.println("<b>Endereço: </b>"+ endereco + "<br>");
+       saida.println("<b>Produto: </b>"+ produto + "<br>");
+       saida.println("<b>Quantidade: </b>"+ quantidade + "<br>");
+       saida.println("<b>Valor: </b>"+ valor + "<br>");
+       saida.println("<b>TOTAL: </b>"+ total + "<br>");
+        
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         

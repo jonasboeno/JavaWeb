@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pedido de Produto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Formulario que envia nome e cpf para servlet /cliente-->
+        <form name="form1" method="POST" action="/webaula02/produto">
+            Nome: <input type="text" name="nome" > <br/>
+            CNPJ: <input type="text" name="cnpj" > <br/>
+            Endereço: <input type="text" name="endereco"> <br/>
+            Produto: <input type="text" name="produto"> <br/>
+            Quantidade: <input type="text" name="quantidade"> <br/>
+            Valor: <input type="text" name="valor"> <br/>
+            <input type="submit" value="Enviar"/>
+        </form>
+    </body>
+</html>
